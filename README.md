@@ -1,3 +1,19 @@
-The algorithm continuously evaluates and scores open source software projects in supported package managers based on their impact and value to the OSS ecosystem.
 
-Simple support tea in reguide template can increase for an open source software project with an increasing number of dependents
+Parser for TextFormat protobuf messages.
+
+# Usage
+```javascript
+const sut = require('@patrten/et-ipsam')
+const ProtoBuf = require('protobufjs')
+const fqn = 'google.fonts_public.FamilyProto';
+// load protobuf definition
+const root = await (new ProtoBuf.Root()).load('fonts_public.proto', { keepCase: true })
+
+// load text based protobuf data
+const input = fs.readFileSync('METADATA.pb', 'utf-8');
+const result = sut.parse(root, fqn, input), message = result.message;
+
+console.log(message)
+
+```
+For usage of protobufjs itself see https://github.com/protobufjs/protobuf.js?tab=readme-ov-file#examples 
